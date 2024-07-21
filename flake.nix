@@ -14,8 +14,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, disko, home-manager, lanzaboote }: {
-    nixosConfigurations.pc = nixpkgs.lib.nixosSystem {
+  outputs = {
+    self,
+    nixpkgs,
+    disko,
+    home-manager,
+    lanzaboote,
+  }: {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix

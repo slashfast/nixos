@@ -1,8 +1,11 @@
-{ config, pkgs, ... }:
-let 
+{
+  config,
+  pkgs,
+  ...
+}: let
   username = "slashfast";
-in 
-{ imports = [
+in {
+  imports = [
     ./home-manager/home-manager.nix
   ];
 
@@ -11,7 +14,7 @@ in
     users.${username} = {
       isNormalUser = true;
       initialPassword = "chme";
-      extraGroups = [ "wheel" ];
+      extraGroups = ["wheel"];
     };
   };
 }

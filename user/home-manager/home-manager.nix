@@ -1,17 +1,20 @@
-{ config, pkgs, ... }:
-let 
+{
+  config,
+  pkgs,
+  ...
+}: let
   username = "slashfast";
   os_version = "24.05";
-in 
-{ home-manager.users.${username} = {
+in {
+  home-manager.users.${username} = {
     home = {
       username = username;
       homeDirectory = "/home/${username}";
-      packages = with pkgs; [ neofetch ];
+      packages = with pkgs; [neofetch];
       stateVersion = os_version;
     };
     programs = {
-      home-manager = { enable = true; };
+      home-manager = {enable = true;};
       nushell = {
         enable = true;
         configFile.source = ./nu/config.nu;
