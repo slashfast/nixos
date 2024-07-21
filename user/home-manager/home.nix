@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: let
   username = "slashfast";
@@ -10,7 +11,7 @@ in {
     home = {
       username = username;
       homeDirectory = "/home/${username}";
-      packages = with pkgs; [neofetch];
+      packages = with pkgs; [neofetch foot];
       stateVersion = os_version;
     };
     programs = {
@@ -23,4 +24,5 @@ in {
       };
     };
   };
+  # nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["google-chrome"];
 }
