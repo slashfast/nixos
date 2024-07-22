@@ -16,6 +16,7 @@ in {
       packages = with pkgs; [
         neofetch
         foot
+        cinnamon.nemo
         google-chrome
       ];
       stateVersion = os_version;
@@ -37,6 +38,7 @@ in {
       };
       #firefox.enable = true;
       vim.enable = true;
+      wofi.enable = true;
     };
   };
 }

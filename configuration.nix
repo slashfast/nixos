@@ -10,6 +10,7 @@
     ./hyprland.nix
     ./gpu.nix
     ./audio.nix
+    ./bluetooth.nix
     ./user/user.nix
   ];
 
@@ -35,7 +36,7 @@
     };
   };
 
-  hardware.upower.enable = true;
+  services.upower.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "24.05";
