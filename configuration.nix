@@ -4,13 +4,11 @@
   lib,
   modulesPath,
   ...
-}: let
-  os_version = "24.05";
-in {
+}: {
   imports = [
     ./hardware-configuration.nix
-    ./gui/hyprland.nix
-    ./gui/nvidia.nix
+    ./hyprland.nix
+    ./nvidia.nix
     ./audio.nix
     ./user/user.nix
   ];
@@ -37,7 +35,8 @@ in {
     };
   };
 
+  hardware.upower.enable = true;
   nixpkgs.config.allowUnfree = true;
 
-  system.stateVersion = os_version;
+  system.stateVersion = "24.05";
 }

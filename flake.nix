@@ -23,17 +23,16 @@
     ...
   }: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-    nixosConfigurations.nixos = 
-        nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./configuration.nix
-            disko.nixosModules.disko
-            ./disk-config.nix
-            home-manager.nixosModules.home-manager
-            lanzaboote.nixosModules.lanzaboote
-            ./secureboot.nix
-          ];
-        };
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./configuration.nix
+        disko.nixosModules.disko
+        ./disk-config.nix
+        home-manager.nixosModules.home-manager
+        lanzaboote.nixosModules.lanzaboote
+        ./secureboot.nix
+      ];
+    };
   };
 }

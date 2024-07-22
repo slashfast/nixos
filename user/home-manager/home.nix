@@ -35,9 +35,7 @@ in {
         envFile.source = ./nu/env.nu;
         loginFile.source = ./nu/login.nu;
       };
-      #  firefox = {
-      #   enable = true;
-      # };
+      #firefox.enable = true;
       vim.enable = true;
     };
   };
