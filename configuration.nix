@@ -10,6 +10,7 @@ in {
   imports = [
     ./hardware-configuration.nix
     ./gui/hyprland.nix
+    ./gui/nvidia.nix
     ./user/user.nix
   ];
 
