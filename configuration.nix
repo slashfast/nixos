@@ -8,7 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     ./hyprland.nix
-    ./nvidia.nix
+    ./gpu.nix
     ./audio.nix
     ./user/user.nix
   ];
