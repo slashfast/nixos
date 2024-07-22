@@ -1,15 +1,11 @@
 {config, ...}: {
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32 = true;
-  };
-
   boot.kernelParams = ["nvidia.NVreg_PreserveVideoMemoryAllocations=1"];
-
   services.xserver.videoDrivers = ["nvidia"];
-
   hardware = {
+    graphics = {
+      enable = true;
+      enable32bit = true;
+    };
     nvidia = {
       modesetting.enable = true;
       powerManagement = {
