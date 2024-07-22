@@ -7,6 +7,8 @@
 in {
   imports = [
     ./home-manager/home.nix
+    ./hyprland.nix
+    ./spotify.nix
   ];
 
   users = {

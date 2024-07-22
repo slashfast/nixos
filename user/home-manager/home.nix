@@ -39,6 +39,7 @@ in {
       #firefox.enable = true;
       vim.enable = true;
       wofi.enable = true;
+      waybar.enable = true;
     };
   };
 }
