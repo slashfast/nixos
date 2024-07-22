@@ -7,6 +7,8 @@
   username = "slashfast";
   os_version = "24.05";
 in {
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
   home-manager.users.${username} = {
     home = {
       username = username;
