@@ -6,7 +6,7 @@
   username = "slashfast";
 in {
   imports = [
-    ./home-manager/home-manager.nix
+    ./home-manager/home.nix
   ];
 
   users = {

@@ -11,8 +11,19 @@ in {
     home = {
       username = username;
       homeDirectory = "/home/${username}";
-      packages = with pkgs; [neofetch foot];
+      packages = with pkgs; [
+        neofetch
+        foot
+        google-chrome
+      ];
       stateVersion = os_version;
+      pointerCursor = {
+        gtk.enable = true;
+        x11.enable = true;
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Amber";
+        size = 25;
+      };
     };
     programs = {
       home-manager = {enable = true;};
@@ -22,7 +33,10 @@ in {
         envFile.source = ./nu/env.nu;
         loginFile.source = ./nu/login.nu;
       };
+      #  firefox = {
+      #   enable = true;
+      # };
+      vim.enable = true;
     };
   };
-  # nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["google-chrome"];
 }

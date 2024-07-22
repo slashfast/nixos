@@ -35,5 +35,7 @@ in {
     };
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   system.stateVersion = os_version;
 }

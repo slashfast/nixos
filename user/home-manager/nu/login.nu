@@ -7,4 +7,5 @@ $env.PROMPT_INDICATOR = {|| "> " }
 
 # Similar to env-path and config-path there is a variable containing the path to login.nu
 # echo $nu.loginshell-path
-neofetch
+# neofetch
+hyprland

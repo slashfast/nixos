@@ -1,4 +1,8 @@
-{config}: {
+{
+  config,
+  lib,
+  pkgs,
+}: {
   hardware.opengl = {
     enable = true;
     driSupport = true;
@@ -14,7 +18,7 @@
       modesetting.enable = true;
       powerManagement = {
         enable = true;
-        finegrained = true;
+        finegrained = false;
       };
       open = false;
       nvidiaSettings = true;
