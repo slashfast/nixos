@@ -11,6 +11,7 @@ in {
     ./hardware-configuration.nix
     ./gui/hyprland.nix
     ./gui/nvidia.nix
+    ./audio.nix
     ./user/user.nix
   ];
 

@@ -13,7 +13,6 @@
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixos-hardware.url = "github:nixos/nixos-hardware/master";
   };
   outputs = {
     self,
@@ -22,18 +21,11 @@
     home-manager,
     lanzaboote,
     ...
-  } @ attrs: {
+  }: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-    nixosConfigurations = {
-      nixos = let
-        pkgs = import nixpkgs {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-        };
-      in
+    nixosConfigurations.nixos = 
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = attrs // {pkgs = pkgs;};
           modules = [
             ./configuration.nix
             disko.nixosModules.disko
@@ -43,6 +35,5 @@
             ./secureboot.nix
           ];
         };
-    };
   };
 }
