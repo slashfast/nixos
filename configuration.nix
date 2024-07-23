@@ -17,6 +17,7 @@
 
   boot.loader = {
     grub = {
+      configurationLimit = 30;
       efiSupport = true;
       device = "/dev/nvme0n1";
     };
@@ -25,9 +26,13 @@
   zramSwap.enable = true;
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "Europe/Moscow";
-  environment.systemPackages = with pkgs; [curl ripgrep bat git];
-
+  environment.systemPackages = with pkgs; [curl ripgrep bat git libGL];
+  security.polkit.enable = true;
   nix = {
+    gc = {
+      dates = "weekly";
+      automatic = true;
+    };
     package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";
     settings = {
