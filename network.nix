@@ -1,4 +1,4 @@
-{config}: {
+{config,lib,...}: {
   networking.useDHCP = false;
 
   systemd.network.networks."10-enp3s0" = {

@@ -4,7 +4,6 @@
   lib,
   ...
 }: {
-  boot.extraModulePackages = [config.boot.kernelPackages.wireguard];
   systemd.network = {
     enable = true;
     netdevs = {
@@ -16,7 +15,7 @@
         };
 
         wireguardConfig = {
-          PrivateKeyFile = "/run/keys/wireguard-privkey";
+          PrivateKeyFile = "/run/keys/nuxt-de";
         };
 
         wireguardPeers = [
