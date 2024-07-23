@@ -4,8 +4,8 @@
   lib,
   ...
 }: {
+  environment.systemPackages = with pkgs; [wireguard-tools];
   systemd.network = {
-    enable = true;
     netdevs = {
       "10-wg0" = {
         netdevConfig = {
