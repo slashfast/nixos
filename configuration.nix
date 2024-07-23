@@ -7,9 +7,11 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ./network.nix
     ./gpu.nix
     ./audio.nix
     ./bluetooth.nix
+    ./wireguard.nix
     ./user/user.nix
   ];
 

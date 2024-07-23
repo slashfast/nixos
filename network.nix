@@ -1,8 +1,9 @@
-{}:{
+{config}: {
   networking.useDHCP = false;
 
   systemd.network.networks."10-enp3s0" = {
     matchConfig.Name = "enp3s0";
+    dns = ["10.0.0.1"];
     networkConfig = {
       # start a DHCP Client for IPv4 Addressing/Routing
       DHCP = "ipv4";

@@ -18,6 +18,7 @@ in {
         foot
         cinnamon.nemo
         google-chrome
+        telegram-desktop
       ];
       stateVersion = os_version;
       pointerCursor = {
@@ -36,7 +37,7 @@ in {
         envFile.source = ./nu/env.nu;
         loginFile.source = ./nu/login.nu;
       };
-      #firefox.enable = true;
+      firefox.enable = true;
       vim.enable = true;
       wofi.enable = true;
       waybar.enable = true;

@@ -14,7 +14,7 @@
           Name = "wg0";
           MTUBytes = "1420";
         };
-        
+
         wireguardConfig = {
           PrivateKeyFile = "/run/keys/wireguard-privkey";
         };
@@ -31,7 +31,8 @@
     networks.wg0 = {
       matchConfig.Name = "wg0";
       address = [
-        "192.168.0.2/24" "fdc9:281f:04d7:9ee9::2/64"
+        "192.168.0.2/24"
+        "fdc9:281f:04d7:9ee9::2/64"
       ];
       DHCP = "no";
       dns = ["192.168.0.1" "fdc9:281f:04d7:9ee9::1"];
