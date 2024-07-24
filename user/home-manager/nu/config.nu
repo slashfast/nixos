@@ -893,3 +893,5 @@ $env.config = {
         }
     ]
 }
+
+alias spotify = spotify --disable-gpu --enable-chrome-browser-cloud-management
