@@ -16,7 +16,7 @@ in {
     users.${username} = {
       isNormalUser = true;
       initialPassword = "chme";
-      extraGroups = ["wheel"];
+      extraGroups = ["wheel" "input"];
     };
   };
 }

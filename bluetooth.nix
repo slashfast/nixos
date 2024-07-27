@@ -10,19 +10,21 @@
     settings = {
       General = {
         Name = "slashfast-pc";
-        ControllerMode = "bredr";       
+        ControllerMode = "bredr";
         #MultiProfile = "off";
-        #Experimental = true;
+        Experimental = true;
       };
     };
-    #disabledPlugins = ["bap" "bass" "mcp" "vcp" "micp" "ccp" "csip"];
+    disabledPlugins = ["bap" "bass" "mcp" "vcp" "micp" "ccp" "csip"];
   };
   #services.blueman.enable = true;
 
-  #systemd.user.services.mpris-proxy = {
-  #  description = "Mpris proxy";
-  #  after = ["network.target" "sound.target"];
-  #  wantedBy = ["default.target"];
-  #  serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
-  #};
+  systemd.user.services.mpris-proxy = {
+    description = "Mpris proxy";
+    after = ["network.target" "sound.target"];
+    wantedBy = ["default.target"];
+    serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+  };
+
+  systemd.services.bluetooth.serviceConfig.ExecStart = ["" "${pkgs.bluez}/libexec/bluetooth/bluetoothd -d"];
 }

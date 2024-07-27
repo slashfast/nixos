@@ -4,21 +4,34 @@
   lib,
   ...
 }: {
-  #sound.enable = false;
-  environment.systemPackages = with pkgs; [pavucontrol];
+  environment.systemPackages = with pkgs; [pavucontrol playerctl];
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    #wireplumber.extraConfig.bluetoothEnhancements = {
-    #  "monitor.bluez.properties" = {
-    #    "bluez5.enable-sbc-xq" = true;
-    #    "bluez5.enable-msbc" = true;
-    #    "bluez5.enable-hw-volume" = true;
-    #    "bluez5.roles" = ["hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag"];
-    #  };
-    #};
+    wireplumber.extraConfig = {
+      JBLXtreme3 = {
+        "settings" = {
+          "bluetooth.autoswitch-to-headset-profile" = false;
+        };
+      };
+      bluetoothEnhancements = {
+        "monitor.bluez.properties" = {
+          "bluez5.enable-sbc-xq" = true;
+          "bluez5.enable-msbc" = true;
+          "bluez5.enable-hw-volume" = true;
+          "bluez5.roles" = [
+            "hsp_hs"
+            "hsp_ag"
+            "hfp_hf"
+            "hfp_ag"
+            "a2dp_sink"
+            "a2dp_source"
+          ];
+        };
+      };
+    };
   };
 }
