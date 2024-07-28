@@ -26,7 +26,7 @@
   zramSwap.enable = true;
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "Europe/Moscow";
-  environment.systemPackages = with pkgs; [curl ripgrep bat git libGL];
+  environment.systemPackages = with pkgs; [curl ripgrep bat git libGL libsecret gnome-keyring];
   security.polkit.enable = true;
   nix = {
     gc = {

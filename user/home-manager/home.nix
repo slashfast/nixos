@@ -21,7 +21,7 @@ in {
         wl-clipboard
         wl-clip-persist
         clipse
-        
+
         # appearance
         noto-fonts
         hack-font
@@ -30,12 +30,13 @@ in {
         cm_unicode
         font-awesome
         adwaita-icon-theme
-        
+
         # work
         jetbrains-toolbox
-        jetbrains.pycharm-community
-	jetbrains.webstorm
+        # jetbrains.pycharm-community
+        # jetbrains.webstorm
         nodejs_22
+        pnpm
         python312
       ];
       stateVersion = os_version;
