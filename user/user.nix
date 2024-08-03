@@ -10,9 +10,9 @@ in {
     ./hyprland.nix
     ./spotify.nix
   ];
-
+  programs.fish.enable = true;
   users = {
-    defaultUserShell = pkgs.nushell;
+    defaultUserShell = pkgs.fish;
     users.${username} = {
       isNormalUser = true;
       initialPassword = "chme";
